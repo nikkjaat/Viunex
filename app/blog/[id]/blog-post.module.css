@@ -1,0 +1,398 @@
+.blogPostPage {
+  padding-top: 5rem;
+}
+
+/* Hero Section */
+.hero {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.backLink:hover {
+  gap: 0.75rem;
+}
+
+.postCategory {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.postTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  font-family: var(--font-poppins);
+  color: var(--text-primary);
+}
+
+.postMeta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.metaIcon {
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.socialShare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--text-secondary);
+}
+
+.shareButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.shareBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--background-end);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.shareBtn:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Featured Image */
+.featuredImage {
+  padding: 2rem 0;
+}
+
+.imageContainer {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-large);
+}
+
+.postImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Article Content */
+.articleContent {
+  padding: 4rem 0;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.mainContent {
+  background: var(--background-end);
+  border-radius: 1rem;
+  padding: 3rem;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
+}
+
+.articleBody {
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.articleBody h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-poppins);
+}
+
+.articleBody h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-poppins);
+}
+
+.articleBody p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+.articleBody ul,
+.articleBody ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.articleBody li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.articleBody blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem 2rem;
+  margin: 2rem 0;
+  background: var(--background-start);
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+}
+
+.articleBody code {
+  background: var(--background-start);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.articleFooter {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--background-start);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+}
+
+.tagIcon {
+  font-size: 0.875rem;
+}
+
+.shareSection h4 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-poppins);
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.authorCard,
+.relatedCard {
+  padding: 2rem;
+}
+
+.authorCard h3,
+.relatedCard h3 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  font-family: var(--font-poppins);
+}
+
+.authorInfo {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.authorAvatar {
+  flex-shrink: 0;
+}
+
+.avatarImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.authorInfo h4 {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  font-family: var(--font-poppins);
+}
+
+.authorInfo p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.relatedPosts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.relatedPost {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.relatedPost:hover {
+  background: var(--background-start);
+}
+
+.relatedImg {
+  width: 80px;
+  height: 60px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.relatedContent {
+  flex: 1;
+}
+
+.relatedContent h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  font-family: var(--font-poppins);
+}
+
+.relatedDate {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .postTitle {
+    font-size: 2.5rem;
+  }
+  
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .postTitle {
+    font-size: 2rem;
+  }
+  
+  .postMeta {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mainContent {
+    padding: 2rem;
+  }
+  
+  .articleBody h2 {
+    font-size: 1.5rem;
+  }
+  
+  .articleBody p {
+    font-size: 1rem;
+  }
+  
+  .socialShare {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .postTitle {
+    font-size: 1.75rem;
+  }
+  
+  .mainContent {
+    padding: 1.5rem;
+  }
+  
+  .authorInfo {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .relatedPost {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .relatedImg {
+    width: 100%;
+    height: 120px;
+  }
+}
