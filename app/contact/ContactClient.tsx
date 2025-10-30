@@ -10,51 +10,29 @@ import {
   HiCheckCircle,
   HiExclamationCircle,
 } from "react-icons/hi";
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaInstagram,
+  FaWhatsapp,
+} from "react-icons/fa";
 import styles from "./contact.module.css";
 
 const contactInfo = [
   {
     icon: HiMail,
     title: "Email Us",
-    details: ["hello@viunex.com", "support@viunex.com"],
+    details: ["support@viunex.com"],
     description: "Send us an email anytime",
+    type: "email" as const,
   },
   {
-    icon: HiPhone,
-    title: "Call Us",
-    details: ["+91 98765 43210"],
-    description: "Mon-Fri from 8am to 5pm",
-  },
-  {
-    icon: HiLocationMarker,
-    title: "Visit Us",
-    details: ["123 Business Ave", "Chandigarh, India"],
-    description: "Come say hello at our office",
-  },
-  {
-    icon: HiClock,
-    title: "Working Hours",
-    details: [
-      "Monday - Friday: 8:00 AM - 6:00 PM",
-      "Saturday: 9:00 AM - 4:00 PM",
-    ],
-    description: "We're here when you need us",
-  },
-];
-
-const socialLinks = [
-  { icon: FaFacebook, href: "https://facebook.com/viunex", label: "Facebook" },
-  { icon: FaTwitter, href: "https://twitter.com/viunex", label: "Twitter" },
-  {
-    icon: FaLinkedin,
-    href: "https://linkedin.com/company/viunex",
-    label: "LinkedIn",
-  },
-  {
-    icon: FaInstagram,
-    href: "https://instagram.com/viunex",
-    label: "Instagram",
+    icon: FaWhatsapp,
+    title: "Chat on WhatsApp",
+    details: ["Quick responses"],
+    description: "Start a conversation",
+    type: "whatsapp" as const,
   },
 ];
 
@@ -81,6 +59,34 @@ export default function Contact() {
       ...prev,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const handleEmailClick = () => {
+    const subject = encodeURIComponent("Inquiry About Digital Services");
+    const body = encodeURIComponent(
+      "Hi Viunex Team,\n\nI would like to learn more about your digital services and discuss my project requirements.\n\nBest regards,"
+    );
+    window.open(
+      `mailto:support@viunex.com?subject=${subject}&body=${body}`,
+      "_blank"
+    );
+
+    // Analytics tracking
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "contact_click", {
+        contact_method: "email",
+      });
+    }
+  };
+
+  const handleWhatsAppClick = () => {
+    const message =
+      "Hi! I'm interested in your digital services. Can we discuss my project?";
+    // Try the WhatsApp Business API link
+    window.open(
+      `https://api.whatsapp.com/send?phone=919779704162&text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -131,6 +137,14 @@ export default function Contact() {
     } finally {
       setIsSubmitting(false);
       setTimeout(() => setSubmitStatus("idle"), 5000);
+    }
+  };
+
+  const handleContactClick = (type: "email" | "whatsapp") => {
+    if (type === "email") {
+      handleEmailClick();
+    } else if (type === "whatsapp") {
+      handleWhatsAppClick();
     }
   };
 
@@ -328,11 +342,12 @@ export default function Contact() {
                   return (
                     <motion.div
                       key={info.title}
-                      className={`card ${styles.infoCard}`}
+                      className={`card ${styles.infoCard} ${styles.clickableCard}`}
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       viewport={{ once: true }}
+                      onClick={() => handleContactClick(info.type)}
                     >
                       <div className={styles.infoIcon}>
                         <Icon />
@@ -352,59 +367,8 @@ export default function Contact() {
                   );
                 })}
               </div>
-
-              {/* Social Links */}
-              <motion.div
-                className={`card ${styles.socialCard}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <h3 className={styles.socialTitle}>Follow Us</h3>
-                <p className={styles.socialDescription}>
-                  Stay connected and get the latest updates
-                </p>
-                <div className={styles.socialLinks}>
-                  {socialLinks.map((social) => {
-                    const Icon = social.icon;
-                    return (
-                      <a
-                        key={social.href}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.socialLink}
-                        aria-label={social.label}
-                      >
-                        <Icon />
-                      </a>
-                    );
-                  })}
-                </div>
-              </motion.div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className={styles.mapSection}>
-        <div className="container">
-          <motion.div
-            className={styles.mapContainer}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className={styles.mapPlaceholder}>
-              <HiLocationMarker className={styles.mapIcon} />
-              <h3>Visit Our Office</h3>
-              <p>123 Business Ave, Chandigarh, India</p>
-              <p>We'd love to meet you in person!</p>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>

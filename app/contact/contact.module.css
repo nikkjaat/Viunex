@@ -5,7 +5,11 @@
 /* Hero Section */
 .hero {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--background-start) 0%,
+    var(--background-end) 100%
+  );
   text-align: center;
 }
 
@@ -170,7 +174,11 @@
 .infoIcon {
   width: 3rem;
   height: 3rem;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--accent-color) 100%
+  );
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
@@ -293,12 +301,12 @@
   .heroTitle {
     font-size: 3rem;
   }
-  
+
   .contactGrid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .formSection {
     position: static;
   }
@@ -308,15 +316,15 @@
   .heroTitle {
     font-size: 2.5rem;
   }
-  
+
   .formRow {
     grid-template-columns: 1fr;
   }
-  
+
   .formCard {
     padding: 2rem;
   }
-  
+
   .infoCard {
     padding: 1.25rem;
   }
@@ -326,12 +334,58 @@
   .heroTitle {
     font-size: 2rem;
   }
-  
+
   .formCard {
     padding: 1.5rem;
   }
-  
+
   .formTitle {
     font-size: 1.75rem;
   }
+}
+
+/* Add these styles to your existing contact.module.css */
+
+.clickableCard {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.clickableCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.clickableCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.clickableCard:hover::before {
+  left: 100%;
+}
+
+.infoCard {
+  position: relative;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #667eea 0%, #764ba2 100%) border-box;
+}
+
+.infoCard:hover {
+  border-color: #667eea;
 }
