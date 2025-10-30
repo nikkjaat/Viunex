@@ -49,7 +49,7 @@ export async function sendContactEmail(data: ContactFormData) {
       to: [process.env.CONTACT_EMAIL || "hello@viunex.com"],
       subject: `New Contact Form Submission from ${name}`,
       html: htmlContent,
-      reply_to: email,
+      replyTo: email,
     });
 
     return { success: true, data };
