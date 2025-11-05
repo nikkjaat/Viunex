@@ -107,7 +107,7 @@
   padding: 1rem;
   /* border-top: 1px solid var(--border-color); */
   background: var(--background-end);
-  border-radius: .5em;
+  border-radius: 0.5em;
 }
 
 .mobileNavLink {
