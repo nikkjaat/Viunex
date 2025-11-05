@@ -21,7 +21,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 20% 80%,
       rgba(30, 64, 175, 0.1) 0%,
       transparent 50%
@@ -80,6 +81,8 @@
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: var(--shadow-large);
+  width: 100%;
+  /* height: 20em; */
 }
 
 .heroImg {

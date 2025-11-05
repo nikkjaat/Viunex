@@ -44,17 +44,37 @@ export async function POST(request: NextRequest) {
 
     // Send emails
     try {
+      console.log("Starting email sending process...");
+
+      // Send notification to your mailbox FIRST
+      console.log("Sending contact notification email...");
       await sendContactEmail(body);
-      // Send auto-reply (don't fail if this fails)
-      await sendAutoReply(body.email, body.name);
+      console.log(body);
+      console.log("Contact notification email sent successfully");
+
+      // Send auto-reply to client (don't fail if this fails)
+      console.log("Sending auto-reply to client...");
+      try {
+        await sendAutoReply(body.email, body.name);
+        console.log("Auto-reply sent successfully");
+      } catch (autoReplyError) {
+        console.error("Auto-reply failed (non-critical):", autoReplyError);
+      }
     } catch (emailError) {
-      console.error("Email sending failed:", emailError);
-      // Still return success if database save worked
+      console.error("CRITICAL: Contact email notification failed:", emailError);
+      console.error(
+        "Error type:",
+        emailError instanceof Error ? emailError.message : "Unknown error"
+      );
+      console.error("Full error:", JSON.stringify(emailError, null, 2));
+
+      // Still return success if database save worked, but log the error
       return NextResponse.json({
         success: true,
         message:
           "Contact form submitted successfully, but email notification failed",
         id: result.insertedId,
+        warning: "Email notification failed - please check server logs",
       });
     }
 

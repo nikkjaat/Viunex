@@ -18,98 +18,98 @@ import { useState } from "react";
 const blogPosts = [
   {
     id: 1,
-    title: "The Future of Web Development: Trends to Watch in 2025",
+    title: "Web Development Trends in Canada 2025: Toronto to Vancouver",
     excerpt:
-      "Explore the latest trends shaping web development, from AI integration to progressive web apps and the evolution of user experience design.",
+      "Explore the latest web development trends shaping Canadian businesses. From AI integration to responsive design for Canadian markets.",
     content: "Full article content would go here...",
     author: "Alex Johnson",
     date: "2025-01-15",
     readTime: "8 min read",
     category: "Web Development",
     image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg",
-    tags: ["Web Development", "Trends", "AI", "PWA"],
+    tags: ["Web Development", "Canadian Tech", "Toronto", "Vancouver"],
     featured: true,
   },
   {
     id: 2,
-    title: "SEO Best Practices for Modern Websites",
+    title: "SEO Strategies for Canadian Businesses: Rank Higher in Google.ca",
     excerpt:
-      "Learn the essential SEO strategies that will help your website rank higher in search results and attract more organic traffic.",
+      "Learn essential SEO strategies that help Canadian businesses rank higher in local search results and attract organic traffic.",
     content: "Full article content would go here...",
     author: "Sarah Chen",
     date: "2025-01-10",
     readTime: "6 min read",
-    category: "SEO",
+    category: "SEO Canada",
     image: "https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg",
-    tags: ["SEO", "Marketing", "Google", "Rankings"],
+    tags: ["SEO Canada", "Canadian SEO", "Google.ca", "Local Ranking"],
     featured: true,
   },
   {
     id: 3,
-    title: "Building Brand Identity in the Digital Age",
+    title: "Building Brand Identity for Canadian Companies",
     excerpt:
-      "Discover how to create a compelling brand identity that resonates with your audience and stands out in the digital marketplace.",
+      "Discover how to create compelling brand identities that resonate with Canadian audience and stand out in local markets.",
     content: "Full article content would go here...",
     author: "Emily Davis",
     date: "2025-01-05",
     readTime: "5 min read",
-    category: "Branding",
+    category: "Branding Canada",
     image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
-    tags: ["Branding", "Design", "Identity", "Marketing"],
+    tags: ["Branding Canada", "Canadian Brands", "Local Identity", "Marketing"],
     featured: false,
   },
   {
     id: 4,
-    title: "Digital Marketing Strategies That Actually Work",
+    title: "Digital Marketing Strategies for Canadian Businesses",
     excerpt:
-      "Cut through the noise with proven digital marketing strategies that deliver real results for businesses of all sizes.",
+      "Proven digital marketing strategies that deliver real results for Canadian businesses of all sizes across provinces.",
     content: "Full article content would go here...",
     author: "Michael Rodriguez",
     date: "2024-12-28",
     readTime: "7 min read",
-    category: "Digital Marketing",
+    category: "Digital Marketing Canada",
     image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg",
-    tags: ["Digital Marketing", "Strategy", "ROI", "Growth"],
+    tags: ["Digital Marketing Canada", "Canadian Market", "ROI", "Growth"],
     featured: false,
   },
   {
     id: 5,
-    title: "The Psychology of User Experience Design",
+    title: "User Experience Design for Canadian Audiences",
     excerpt:
-      "Understanding user psychology is key to creating interfaces that not only look great but also drive conversions and engagement.",
+      "Understanding Canadian user psychology to create interfaces that drive conversions and engagement for local businesses.",
     content: "Full article content would go here...",
     author: "Sarah Chen",
     date: "2024-12-20",
     readTime: "9 min read",
-    category: "UX Design",
+    category: "UX Design Canada",
     image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
-    tags: ["UX Design", "Psychology", "Conversion", "User Research"],
+    tags: ["UX Design Canada", "Canadian Users", "Conversion", "Research"],
     featured: false,
   },
   {
     id: 6,
-    title: "Performance Optimization for Modern Web Apps",
+    title: "Website Performance Optimization for Canadian Markets",
     excerpt:
-      "Learn advanced techniques to optimize your web applications for speed, performance, and better user experience.",
+      "Advanced techniques to optimize web applications for speed and performance targeting Canadian audience.",
     content: "Full article content would go here...",
     author: "Alex Johnson",
     date: "2024-12-15",
     readTime: "10 min read",
-    category: "Performance",
+    category: "Performance Canada",
     image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
-    tags: ["Performance", "Optimization", "Speed", "Core Web Vitals"],
+    tags: ["Performance Canada", "Optimization", "Speed", "Canadian Hosting"],
     featured: false,
   },
 ];
 
 const categories = [
   "All",
-  "Web Development",
-  "SEO",
-  "Branding",
-  "Digital Marketing",
-  "UX Design",
-  "Performance",
+  "Web Development Canada",
+  "SEO Canada",
+  "Branding Canada",
+  "Digital Marketing Canada",
+  "UX Design Canada",
+  "Performance Canada",
 ];
 
 export default function BlogClient() {
@@ -142,20 +142,20 @@ export default function BlogClient() {
       }
 
       setNewsletterStatus("success");
-      setNewsletterMessage("Successfully subscribed to our newsletter!");
+      setNewsletterMessage("Successfully subscribed to our Canada insights!");
       setNewsletterEmail("");
 
       // Track successful newsletter subscription
       if (typeof window !== "undefined" && window.gtag) {
         window.gtag("event", "newsletter_signup", {
           event_category: "engagement",
-          event_label: "blog_page",
+          event_label: "canada_blog",
         });
       }
 
       if (typeof window !== "undefined" && window.fbq) {
         window.fbq("track", "Subscribe", {
-          content_name: "Newsletter",
+          content_name: "Canada Newsletter",
           content_category: "Email Marketing",
         });
       }
@@ -188,12 +188,12 @@ export default function BlogClient() {
             transition={{ duration: 0.8 }}
           >
             <h1 className={styles.heroTitle}>
-              Our <span className="gradient-text">Blog</span>
+              Canada <span className="gradient-text">Business Insights</span>
             </h1>
             <p className={styles.heroDescription}>
-              Insights, tips, and industry knowledge to help you stay ahead in
-              the digital landscape. Learn from our experts and grow your
-              business.
+              Expert insights, tips, and industry knowledge for Canadian
+              businesses. Learn from our experts and grow your business across
+              Canada from Toronto to Vancouver.
             </p>
           </motion.div>
         </div>
@@ -209,9 +209,9 @@ export default function BlogClient() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className={styles.sectionTitle}>Featured Articles</h2>
+            <h2 className={styles.sectionTitle}>Featured Canada Insights</h2>
             <p className={styles.sectionDescription}>
-              Our most popular and insightful content
+              Our most popular content for Canadian business growth
             </p>
           </motion.div>
 
@@ -228,7 +228,7 @@ export default function BlogClient() {
                 <div className={styles.postImage}>
                   <Image
                     src={post.image}
-                    alt={post.title}
+                    alt={`${post.title} - Canadian business insights`}
                     width={600}
                     height={300}
                     className={styles.postImg}
@@ -268,7 +268,7 @@ export default function BlogClient() {
                   </div>
 
                   <Link href={`/blog/${post.id}`} className={styles.readMore}>
-                    Read More <HiArrowRight />
+                    Read Canada Insights <HiArrowRight />
                   </Link>
                 </div>
               </motion.article>
@@ -287,9 +287,10 @@ export default function BlogClient() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className={styles.sectionTitle}>Latest Articles</h2>
+            <h2 className={styles.sectionTitle}>Latest Canada Articles</h2>
             <p className={styles.sectionDescription}>
-              Stay updated with our latest insights and tips
+              Stay updated with latest Canadian business insights and growth
+              tips
             </p>
           </motion.div>
 
@@ -307,7 +308,7 @@ export default function BlogClient() {
                 <div className={styles.cardImage}>
                   <Image
                     src={post.image}
-                    alt={post.title}
+                    alt={`${post.title} - Canadian business blog`}
                     width={400}
                     height={200}
                     className={styles.cardImg}
@@ -335,7 +336,7 @@ export default function BlogClient() {
                       {post.readTime}
                     </span>
                     <Link href={`/blog/${post.id}`} className={styles.cardLink}>
-                      Read More <HiArrowRight />
+                      Read Canada Article <HiArrowRight />
                     </Link>
                   </div>
                 </div>
@@ -355,10 +356,10 @@ export default function BlogClient() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className={styles.newsletterTitle}>Stay Updated</h2>
+            <h2 className={styles.newsletterTitle}>Canada Business Updates</h2>
             <p className={styles.newsletterDescription}>
-              Subscribe to our newsletter and get the latest insights delivered
-              to your inbox.
+              Subscribe to our newsletter for latest Canadian market insights
+              and business growth tips.
             </p>
             <form
               className={styles.newsletterForm}
@@ -368,7 +369,7 @@ export default function BlogClient() {
                 type="email"
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
-                placeholder="Enter your email address"
+                placeholder="Enter your email for Canada insights"
                 required
                 disabled={newsletterStatus === "loading"}
                 className={styles.newsletterInput}
@@ -380,7 +381,7 @@ export default function BlogClient() {
               >
                 {newsletterStatus === "loading"
                   ? "Subscribing..."
-                  : "Subscribe"}
+                  : "Get Canada Insights"}
               </button>
             </form>
 

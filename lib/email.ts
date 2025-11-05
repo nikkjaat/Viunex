@@ -44,18 +44,26 @@ export async function sendContactEmail(data: ContactFormData) {
   `;
 
   try {
-    const data = await resend.emails.send({
-      from: `Viunex <${process.env.FROM_EMAIL}>`,
-      to: [process.env.CONTACT_EMAIL || "hello@viunex.com"],
-      subject: `New Contact Form Submission from ${name}`,
+    console.log(
+      "Attempting to send contact email to:",
+      process.env.CONTACT_EMAIL
+    );
+    console.log("From email:", process.env.FROM_EMAIL);
+
+    const result = await resend.emails.send({
+      from: `Viunex Contact Form <${process.env.FROM_EMAIL}>`,
+      to: [process.env.CONTACT_EMAIL || "support@viunex.com"],
+      subject: `🔔 New Contact Form: ${name} - ${service || "General Inquiry"}`,
       html: htmlContent,
       replyTo: email,
     });
 
-    return { success: true, data };
+    console.log("Contact email sent successfully:", result);
+    return { success: true, data: result };
   } catch (error) {
-    console.error("Email sending failed:", error);
-    throw new Error("Failed to send email");
+    console.error("Email sending failed with error:", error);
+    console.error("Error details:", JSON.stringify(error, null, 2));
+    throw error;
   }
 }
 

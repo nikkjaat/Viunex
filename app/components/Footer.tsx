@@ -14,16 +14,16 @@ import styles from "./Footer.module.css";
 
 const footerLinks = {
   services: [
-    { label: "Web Development", href: "/services#web-development" },
-    { label: "Digital Marketing", href: "/services#digital-marketing" },
-    { label: "SEO Optimization", href: "/services#seo" },
-    { label: "Branding", href: "/services#branding" },
+    { label: "Web Development ", href: "/services#web-development" },
+    { label: "Digital Marketing ", href: "/services#digital-marketing" },
+    { label: "SEO Optimization ", href: "/services#seo" },
+    { label: "Branding ", href: "/services#branding" },
   ],
   company: [
-    { label: "About Us", href: "/about" },
-    { label: "Our Projects", href: "/projects" },
+    { label: "About Us ", href: "/about" },
+    { label: "Projects", href: "/projects" },
     { label: "Blog", href: "/blog" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact ", href: "/contact" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
@@ -33,8 +33,16 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: FaFacebook, href: "https://facebook.com/viunex", label: "Facebook" },
-  { icon: FaTwitter, href: "https://twitter.com/viunex", label: "Twitter" },
+  {
+    icon: FaFacebook,
+    href: "https://facebook.com/viunex",
+    label: "Facebook",
+  },
+  {
+    icon: FaTwitter,
+    href: "https://twitter.com/viunex",
+    label: "Twitter",
+  },
   {
     icon: FaLinkedin,
     href: "https://linkedin.com/company/viunex",
@@ -43,9 +51,9 @@ const socialLinks = [
   {
     icon: FaInstagram,
     href: "https://instagram.com/viunex",
-    label: "Instagram",
+    label: "Instagram ",
   },
-  { icon: FaGithub, href: "https://github.com/viunex", label: "GitHub" },
+  { icon: FaGithub, href: "https://github.com/viunex", label: "GitHub " },
 ];
 
 export default function Footer() {
@@ -65,22 +73,16 @@ export default function Footer() {
               <span className="gradient-text">Viunex</span>
             </Link>
             <p className={styles.footerDescription}>
-              Transforming businesses through innovative web development,
-              digital marketing, and strategic branding solutions.
+              Transforming Canadian businesses through innovative web
+              development, digital marketing, and strategic branding solutions
+              across Canada. Serving Toronto, Vancouver, Montreal and all
+              Canadian cities.
             </p>
 
             <div className={styles.contactInfo}>
               <div className={styles.contactItem}>
                 <HiMail className={styles.contactIcon} />
-                <span>hello@viunex.com</span>
-              </div>
-              <div className={styles.contactItem}>
-                <HiPhone className={styles.contactIcon} />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className={styles.contactItem}>
-                <HiLocationMarker className={styles.contactIcon} />
-                <span>San Francisco, CA</span>
+                <span>support@viunex.com</span>
               </div>
             </div>
           </motion.div>
@@ -147,7 +149,7 @@ export default function Footer() {
         </div>
 
         {/* Social Links & Copyright */}
-        <motion.div
+        {/* <motion.div
           className={styles.footerBottom}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -174,14 +176,18 @@ export default function Footer() {
 
           <div className={styles.copyright}>
             <p>
-              &copy; {new Date().getFullYear()} Viunex. All rights reserved.
+              &copy; {new Date().getFullYear()} Viunex . All rights reserved.
+            </p>
+            <p>
+              Digital Services — Serving businesses across Canada from Toronto
+              to Vancouver
             </p>
             <p>
               Crafted with ❤️ by <strong>Nikhil Choudhary</strong> —
               <a href="mailto:nikhilmeharwal@gmail.com"> Get in touch</a>
             </p>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </footer>
   );

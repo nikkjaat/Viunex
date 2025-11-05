@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -14,7 +14,7 @@ const navItems = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
+  // { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -22,21 +22,39 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ✅ Close menu when clicking outside navbar
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
+
   return (
     <motion.nav
+      ref={navRef}
       className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}
-      data-theme={theme} // Add this line
+      data-theme={theme}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -45,7 +63,11 @@ export default function Navigation() {
         <div className={styles.navContent}>
           <Link href="/" className={styles.logo}>
             <Image
-              src={`${theme === "light" ? "/vuinex_logo_2.png" : "/vuinex_logo_2_white.png"}`}
+              src={`${
+                theme === "light"
+                  ? "/vuinex_logo_2.png"
+                  : "/vuinex_logo_2_white.png"
+              }`}
               alt="Viunex Logo"
               width={120}
               height={40}
@@ -70,13 +92,13 @@ export default function Navigation() {
           </div>
 
           <div className={styles.navActions}>
-            <button
+            {/* <button
               onClick={toggleTheme}
               className={styles.themeToggle}
               aria-label="Toggle theme"
             >
               {theme === "light" ? <HiMoon /> : <HiSun />}
-            </button>
+            </button> */}
 
             <button
               className={styles.mobileToggle}

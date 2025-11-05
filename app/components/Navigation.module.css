@@ -104,9 +104,10 @@
 .mobileNav {
   display: none;
   flex-direction: column;
-  padding: 1rem 0;
-  border-top: 1px solid var(--border-color);
+  padding: 1rem;
+  /* border-top: 1px solid var(--border-color); */
   background: var(--background-end);
+  border-radius: .5em;
 }
 
 .mobileNavLink {

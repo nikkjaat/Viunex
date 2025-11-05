@@ -1,12 +1,65 @@
+/* services.module.css */
 .servicesPage {
-  padding-top: 5rem;
+  min-height: 100vh;
+}
+
+/* Base Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Base Section */
+.section {
+  padding: 3rem 0;
+}
+
+/* Base Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+  color: white;
+  border-color: #dc2626;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btnSecondary:hover {
+  background: var(--hover-bg);
+  transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+  padding: 6rem 0 3rem;
   text-align: center;
+  background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
 }
 
 .heroContent {
@@ -15,126 +68,165 @@
 }
 
 .heroTitle {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
-  font-family: var(--font-poppins);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.gradientText {
+  background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .heroDescription {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.heroStats {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.heroStat {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.heroStat strong {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+/* Section Header */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.sectionDescription {
+  font-size: 1.1rem;
   color: var(--text-secondary);
   line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Services Grid */
 .servicesGrid {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .serviceCard {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  background: var(--background-end);
-  border-radius: 1.5rem;
-  padding: 3rem;
-  box-shadow: var(--shadow-light);
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--border-color);
   transition: all 0.3s ease;
 }
 
-.serviceCard:nth-child(even) {
-  direction: rtl;
-}
-
-.serviceCard:nth-child(even) .serviceContent {
-  direction: ltr;
-}
-
 .serviceCard:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-large);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .serviceContent {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  padding: 1.5rem;
 }
 
 .serviceHeader {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .serviceIcon {
-  width: 3.5rem;
-  height: 3.5rem;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: #dc2626;
   flex-shrink: 0;
 }
 
 .serviceTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-poppins);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
 }
 
 .serviceSubtitle {
-  color: var(--text-secondary);
-  font-size: 1.125rem;
+  font-size: 1rem;
+  color: #dc2626;
+  font-weight: 500;
+  margin: 0;
 }
 
 .serviceDescription {
-  color: var(--text-secondary);
+  font-size: 1rem;
   line-height: 1.6;
-  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
 }
 
-.serviceFeatures h3 {
-  font-size: 1.125rem;
+.serviceFeatures {
+  margin-bottom: 1.5rem;
+}
+
+.serviceFeatures h4 {
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
+  margin-bottom: 0.75rem;
 }
 
 .serviceFeatures ul {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
 }
 
 .serviceFeatures li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
-  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
 }
 
 .checkIcon {
-  color: var(--primary-color);
-  font-size: 1.125rem;
+  color: #10b981;
   flex-shrink: 0;
+  margin-top: 0.125rem;
 }
 
-.serviceTechnologies h3 {
-  font-size: 1.125rem;
+.serviceTechnologies {
+  margin-bottom: 1.5rem;
+}
+
+.serviceTechnologies h4 {
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
+  margin-bottom: 0.75rem;
 }
 
 .techTags {
@@ -144,21 +236,20 @@
 }
 
 .techTag {
-  background: var(--background-start);
-  color: var(--text-secondary);
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  font-size: 0.875rem;
+  background: var(--tag-bg);
+  color: var(--text-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
   font-weight: 500;
   border: 1px solid var(--border-color);
 }
 
 .serviceFooter {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
 .servicePricing {
@@ -168,98 +259,108 @@
 }
 
 .priceLabel {
-  color: var(--text-muted);
-  font-size: 0.875rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
 .price {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: #dc2626;
 }
 
 .serviceImage {
   position: relative;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: var(--shadow-medium);
+  height: 200px;
 }
 
 .serviceImg {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+}
+
+/* Canada Focus Section */
+.canadaFocus {
+  padding: 3rem 0;
+  background: var(--section-bg);
+}
+
+.canadaGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.canadaCard {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.canadaIcon {
+  font-size: 2.5rem;
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.canadaCard h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.canadaCard p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 /* Process Section */
 .process {
-  background: var(--background-start);
-}
-
-.sectionHeader {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.sectionTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  font-family: var(--font-poppins);
-}
-
-.sectionDescription {
-  font-size: 1.125rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
 }
 
 .processGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
 .processStep {
   text-align: center;
-  padding: 2rem 1rem;
+  position: relative;
 }
 
 .stepNumber {
-  width: 4rem;
-  height: 4rem;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin: 0 auto 1.5rem;
+  color: #dc2626;
+  opacity: 0.2;
+  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
 .stepTitle {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  font-family: var(--font-poppins);
 }
 
 .stepDescription {
-  color: var(--text-secondary);
+  font-size: 0.9rem;
   line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 /* CTA Section */
 .cta {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-  color: white;
+  padding: 4rem 0;
   text-align: center;
-  padding: 4rem 2rem;
-  margin: 2em 0;  
-  border-radius: 0rem;
+  background: var(--section-bg);
 }
 
 .ctaContent {
@@ -268,118 +369,162 @@
 }
 
 .ctaTitle {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  font-family: var(--font-poppins);
 }
 
 .ctaDescription {
-  font-size: 1.125rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
   margin-bottom: 2rem;
-  opacity: 0.9;
 }
 
 .ctaActions {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 2rem;
 }
 
-.ctaActions .btn {
+.canadaCities {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.ctaActions .btn-primary {
-  background: white;
-  color: var(--primary-color);
+.canadaCities span {
+  background: var(--tag-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
 }
 
-.ctaActions .btn-primary:hover {
-  background: rgba(255, 255, 255, 0.9);
-}
+/* Tablet Styles */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
 
-.ctaActions .btn-secondary {
-  background: transparent;
-  color: white;
-  border-color: white;
-}
+  .section {
+    padding: 4rem 0;
+  }
 
-.ctaActions .btn-secondary:hover {
-  background: white;
-  color: var(--primary-color);
-}
+  .hero {
+    padding: 8rem 0 4rem;
+  }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
   .heroTitle {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
-  
-  .serviceCard {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .serviceCard:nth-child(even) {
-    direction: ltr;
-  }
-  
-  .processGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .serviceFeatures ul {
-    grid-template-columns: 1fr;
-  }
-}
 
-@media (max-width: 768px) {
-  .heroTitle {
+  .heroDescription {
+    font-size: 1.25rem;
+  }
+
+  .sectionTitle {
     font-size: 2.5rem;
   }
-  
-  .serviceCard {
+
+  .serviceContent {
     padding: 2rem;
   }
-  
-  .serviceTitle {
-    font-size: 1.75rem;
-  }
-  
-  .processGrid {
-    grid-template-columns: 1fr;
-  }
-  
+
   .serviceFooter {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: stretch;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
-  
+
+  .serviceImage {
+    height: 250px;
+  }
+
+  .canadaGrid {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .canadaCard {
+    flex: 1;
+  }
+
+  .processGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
   .ctaActions {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .canadaCities {
+    gap: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
-  .heroTitle {
-    font-size: 2rem;
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 3rem;
   }
-  
+
   .serviceCard {
-    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
   }
-  
-  .serviceHeader {
-    flex-direction: column;
-    text-align: center;
+
+  .serviceImage {
+    height: 100%;
+    min-height: 300px;
   }
-  
-  .serviceIcon {
-    margin: 0 auto;
+
+  .processGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .ctaTitle {
+    font-size: 2.5rem;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .serviceCard,
+  .btn,
+  .canadaCard,
+  .processStep {
+    transition: none;
+  }
+
+  .serviceCard:hover {
+    transform: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .btn,
+  .ctaActions {
+    display: none !important;
+  }
+
+  .serviceCard {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
   }
 }
