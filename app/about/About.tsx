@@ -44,28 +44,24 @@ const values = [
 
 const team = [
   {
-    name: "Alex Johnson",
+    name: "Pranita Alwadhi",
     role: "Founder & CEO",
-    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
-    bio: "With over 10 years of experience in web development and digital strategy, Alex leads our vision for innovative digital solutions.",
+    image:
+      "https://res.cloudinary.com/dbexuvouv/image/upload/v1762320233/viunex/riya_c9lemv.jpg",
+    bio: "Leading Viunex with strategic vision and business development expertise, driving growth and client success.",
   },
   {
-    name: "Sarah Chen",
-    role: "Head of Design",
-    image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg",
-    bio: "Sarah brings creative excellence to every project with her expertise in UX/UI design and brand identity.",
+    name: "Nikhil Choudhary",
+    role: "Web Designer & Developer",
+    image:
+      "https://res.cloudinary.com/dbexuvouv/image/upload/v1762320464/viunex/WhatsApp_Image_2025-11-05_at_10.57.34_9b5163a2_cwk9ap.jpg",
+    bio: "Creating stunning, responsive websites with modern technologies and exceptional user experiences.",
   },
   {
-    name: "Michael Rodriguez",
-    role: "Lead Developer",
+    name: "Monu",
+    role: "Marketing Head",
     image: "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg",
-    bio: "Michael ensures our technical solutions are robust, scalable, and built with the latest technologies.",
-  },
-  {
-    name: "Emily Davis",
-    role: "Marketing Director",
-    image: "https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg",
-    bio: "Emily drives growth strategies and digital marketing campaigns that deliver measurable results.",
+    bio: "Developing comprehensive digital marketing strategies to enhance brand visibility and drive business growth.",
   },
 ];
 

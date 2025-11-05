@@ -242,15 +242,23 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  justify-items: center;
 }
 
 .teamCard {
   text-align: center;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 320px;
+  width: 100%;
 }
 
 .memberImage {
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .memberImg {
@@ -258,13 +266,19 @@
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto;
+}
+
+.memberInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .memberName {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .memberRole {
@@ -272,12 +286,14 @@
   color: #667eea;
   margin-bottom: 1rem;
   font-weight: 500;
+  text-align: center;
 }
 
 .memberBio {
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--text-secondary);
+  text-align: center;
 }
 
 /* CTA Section */
@@ -359,6 +375,11 @@
   .teamGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    justify-items: center;
+  }
+
+  .teamCard {
+    max-width: 300px;
   }
 
   .btn {
@@ -382,7 +403,12 @@
   }
 
   .teamGrid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+
+  .teamCard {
+    max-width: 280px;
   }
 
   .ctaTitle {
@@ -394,6 +420,15 @@
 @media (min-width: 1280px) {
   .container {
     max-width: 1200px;
+  }
+
+  .teamGrid {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+
+  .teamCard {
+    max-width: 300px;
   }
 }
 
