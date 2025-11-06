@@ -100,7 +100,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Digital Excellence for
+                Driving Digital Growth for
                 <span className="gradient-text"> Canadian Businesses</span>
               </motion.h1>
 
@@ -110,9 +110,10 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                We create stunning websites, drive digital growth, and build
-                memorable brands that help Canadian businesses thrive in the
-                digital landscape.
+                We specialize in web development, digital marketing, SEO, and
+                branding tailored to the Canadian market. Our mission: to
+                deliver measurable results and long-term digital success for
+                every client we work with.
               </motion.p>
 
               <motion.div
@@ -138,7 +139,7 @@ export default function Home() {
             >
               <div className={styles.heroImage}>
                 <Image
-                  src="/home.jpg"
+                  src="https://res.cloudinary.com/dbexuvouv/image/upload/v1762437191/viunex/WhatsApp_Image_2025-11-06_at_12.00.17_b08037a3_dz0xav.jpg"
                   alt="Digital transformation for Canadian businesses"
                   width={500}
                   height={400}

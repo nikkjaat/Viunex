@@ -60,7 +60,7 @@ const team = [
   {
     name: "Monu",
     role: "Marketing Head",
-    image: "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg",
+    image: "https://res.cloudinary.com/dbexuvouv/image/upload/v1762437258/viunex/WhatsApp_Image_2025-11-06_at_12.02.28_9068d033_eihszm.jpg",
     bio: "Developing comprehensive digital marketing strategies to enhance brand visibility and drive business growth.",
   },
 ];
