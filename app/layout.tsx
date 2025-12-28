@@ -28,6 +28,7 @@ export const metadata: Metadata = {
   },
   description:
     "Get in touch with Vuinex for website design, SEO, and digital marketing services in Chandigarh. Let's build your online presence together.",
+
   keywords: [
     "web development",
     "digital marketing",
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "PpKPYmo_YfR5b8hZ8Fop61PzitHuALWsqyAKSEZ1QlY",
   },
   other: {
     "theme-color": "#1E40AF",
